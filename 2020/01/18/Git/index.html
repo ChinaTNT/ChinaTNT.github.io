@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TNT</title>
+  <title>Git | TNT</title>
   <meta name="keywords" content="">
-  <meta name="description" content="TNT">
+  <meta name="description" content="Git | TNT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC) 完成动">
 <meta property="og:type" content="article">
@@ -58,7 +58,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/glow.png" />
@@ -215,12 +215,45 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Git" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#StudyNotes"><span class="toc-text">StudyNotes</span></a></li></ol>
+        <h1 class="article-title">Git</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-01-01 20:37:20'>2020-01-18 22:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-text">Git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#todolist"><span class="toc-text">todolist</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -233,20 +266,221 @@
     }
 </style>
 </div>
-            <h1 id="StudyNotes"><a href="#StudyNotes" class="headerlink" title="StudyNotes"></a>StudyNotes</h1><blockquote>
-<p><a href="C_C++">C/C++</a></p>
-<p><a href="Linux">Linux</a></p>
-<p><a href="python">python</a></p>
-<p><a href="Web基础">Web基础</a></p>
-<p><a href="代码管理">代码管理</a></p>
-<p><a href="数据库">数据库</a></p>
-<p><a href="网络基础">网络基础</a></p>
-<p><a href="小技巧">小技巧</a></p>
-</blockquote>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><ul>
+<li><p>增加用户信息</p>
+<pre><code class="git">git config --global user.name &quot;John Doe&quot;
+git config --global user.email johndoe@example.com</code></pre>
+<p><code>--local针对当前某仓库生效，优先级高于--global。就一个代码仓库而言，两个设置的效果一样</code></p>
+</li>
+<li><p>设置文本编辑器（默认使用操作系统默认的文本编辑器）</p>
+<p>例如使用emacs</p>
+<pre><code class="console">git config --global core.editor emacs</code></pre>
+</li>
+<li><p>检查配置信息</p>
+<pre><code class="console">$ git config --list
+user.name=John Doe
+user.email=johndoe@example.com
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+...
+$ git config user.name #查询某一项配置
+John Doe</code></pre>
+</li>
+<li><p>获取帮助</p>
+<pre><code class="console">$ git help &lt;verb&gt;
+$ git &lt;verb&gt; --help
+$ man git-&lt;verb&gt;
+$ git help config #获得 config 命令的手册</code></pre>
+</li>
+<li><p>建立Git仓库</p>
+<p>a. 在现有目录下初始化仓库</p>
+<pre><code class="console">$ git init
+# 添加文件并提交
+$ git add *.c #添加*.c文件 后面可以接多个文件或者文件夹
+$ git add LICENSE #添加license
+$ git commit -m &#39;initial project version&#39; #提交</code></pre>
+<p>b. 从服务器clone一个现有的仓库</p>
+<pre><code class="console">$ git clone https://github.com/libgit2/libgit2 
+$ git clone https://github.com/libgit2/libgit2 mylibgit #与上面一条命令区别的是:本地仓库的名字会变更为mylibgit</code></pre>
+<p><em>Git 支持多种数据传输协议。 上面的例子使用的是 <code>https://</code> 协议，不过你也可以使用 <code>git://</code> 协议或者使用 SSH 传输协议，比如 <code>user@server:path/to/repo.git</code> 。</em></p>
+</li>
+<li><p>记录每次更新到仓库</p>
+<p>你工作目录下的每一个文件都不外乎这两种状态：已跟踪或未跟踪</p>
+<ul>
+<li>已跟踪的文件是指那些被纳入了版本控制的文件，在上一次快照中有它们的记录，在工作一段时间后，它们的状态可能处于未修改，已修改或已放入暂存区。（ 初次克隆某个仓库的时候，工作目录中的所有文件都属于已跟踪文件，并处于未修改状态。）</li>
+<li>其他均为未跟踪文件</li>
+</ul>
+</li>
+<li><p>使用 Git 时文件的生命周期</p>
+</li>
+</ul>
+<p><img src="lifecycle.png" alt="使用 Git 时文件的生命周期"></p>
+<ul>
+<li><p>检查当前文件状态</p>
+<pre><code class="console">$ git status
+On branch master
+nothing to commit, working directory clean 
+#此时表明工作目录已经干净了
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
 
-        </article>
-        
-        
+    new file:   README
+ #只要在 Changes to be committed 这行下面的，就说明是已暂存状态。 如果此时提交，那么该文件此时此刻的版本将被留存在历史记录中。</code></pre>
+</li>
+<li><p>暂存已修改文件</p>
+<pre><code class="console"># 修改了一个已被跟踪（git add过的）的文件
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+    new file:   README
+
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+    modified:   CONTRIBUTING.md
+#文件 CONTRIBUTING.md 出现在 Changes not staged for commit 这行下面，说明已跟踪文件的内容发生了变化，但还没有放到暂存区。 要暂存这次更新，需要运行 git add 命令。 这是个多功能命令：可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等。 将这个命令理解为“添加内容到下一次提交中”而不是“将一个文件添加到项目中”要更加合适。</code></pre>
+<pre><code>  现在让我们运行 git add 将&quot;CONTRIBUTING.md&quot;放到暂存区，然后再看看 git status 的输出：</code></pre><pre><code>$ git add CONTRIBUTING.md
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+new file:   README
+modified:   CONTRIBUTING.md</code></pre><p>​       怎么回事？ 现在 <code>CONTRIBUTING.md</code> 文件同时出现在暂存区和非暂存区。 这怎么可能呢？ 好吧，实际上 Git 只不过暂存了你运行 <code>git add</code> 命令时的版本， 如果你现在提交，<code>CONTRIBUTING.md</code> 的版本是你最后一次运行 <code>git add</code> 命令时的那个版本，而不是你运行 <code>git commit</code> 时，在工作目录中的当前版本。 所以，运行了 <code>git add</code> 之后又作了修订的文件，需要重新运行 <code>git add</code> 把最新版本重新暂存起来：  </p>
+<pre><code class="console">$ git add CONTRIBUTING.md
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+    new file:   README
+    modified:   CONTRIBUTING.md  </code></pre>
+</li>
+<li><p>状态简览</p>
+<pre><code class="console">$ git status -s #等同于 git status --short
+ M README #出现在右边的 M 表示该文件被修改了但是还没放入暂存区
+MM Rakefile #Rakefile 在工作区被修改并提交到暂存区后又在工作区中被修改了 （该文件修改一次后 add了一次 又修改了一次）
+A  lib/git.rb
+M  lib/simplegit.rb #出现在靠左边的 M 表示该文件被修改了并放入了暂存区
+?? LICENSE.txt #未跟踪文件</code></pre>
+</li>
+<li><p>忽略文件</p>
+</li>
+</ul>
+<p>  文件 <code>.gitignore</code> 的格式规范如下：</p>
+<ul>
+<li><p>所有空行或者以 <code>＃</code> 开头的行都会被 Git 忽略。</p>
+</li>
+<li><p>可以使用标准的 glob 模式匹配。</p>
+</li>
+<li><p>匹配模式可以以（<code>/</code>）开头防止递归。</p>
+</li>
+<li><p>匹配模式可以以（<code>/</code>）结尾指定目录。</p>
+</li>
+<li><p>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（<code>!</code>）取反。</p>
+<p>```console<br>$ cat .gitignore</p>
+</li>
+</ul>
+<p>  *.[oa] #忽略所有以 .o 或 .a 结尾的文件<br>  *~ #忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。 </p>
+<pre><code>
++ 查看已暂存和未暂存的修改
+
+  要查看尚未暂存的文件更新了哪些部分，不加参数直接输入 `git diff`
+
+  ```console
+  $ git diff
+  diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+  index 8ebb991..643e24f 100644
+  --- a/CONTRIBUTING.md
+  +++ b/CONTRIBUTING.md
+  @@ -65,7 +65,8 @@ branch directly, things can get messy.
+   Please include a nice description of your changes when you submit your PR;
+   if we have to read the whole diff to figure out why you&#39;re contributing
+   in the first place, you&#39;re less likely to get feedback and have your change
+  -merged in.
+  +merged in. Also, split your changes into comprehensive chunks if your patch is
+  +longer than a dozen lines.
+
+   If you are starting to work on a particular area, feel free to submit a PR
+   that highlights your work in progress (and note in the PR title that it&#39;s</code></pre><p>  ​        此命令比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容。</p>
+<pre><code class="console">  #查看已暂存的将要添加到下次提交里的内容
+  $ git diff --staged 
+  diff --git a/README b/README
+  new file mode 100644
+  index 0000000..03902a1
+  --- /dev/null
+  +++ b/README
+  @@ -0,0 +1 @@
+  +My Project</code></pre>
+<ul>
+<li><p>提交更新</p>
+<pre><code class="console">$ git commit -m &quot;Story 182: Fix benchmarks for speed&quot;
+[master 463dc4f] Story 182: Fix benchmarks for speed
+ 2 files changed, 2 insertions(+)
+ create mode 100644 README</code></pre>
+</li>
+<li><p>跳过使用暂存区域</p>
+<p>跳过add这步，直接使用git commit -a -m “提交说明”，完成本次提交。</p>
+<pre><code class="console">$ git status
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+    modified:   CONTRIBUTING.md
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+$ git commit -a -m &#39;added new benchmarks&#39;
+[master 83e38c7] added new benchmarks
+ 1 file changed, 5 insertions(+), 0 deletions(-)</code></pre>
+</li>
+<li><p>移除文件</p>
+<p><code>git rm</code> 命令后面可以列出文件或者目录的名字，也可以使用 <code>glob</code> 模式。 比方说：</p>
+<pre><code class="console">$ git rm log/\*.log</code></pre>
+<p>注意到星号 <code>*</code> 之前的反斜杠 <code>\</code>， 因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开。 此命令删除 <code>log/</code> 目录下扩展名为 <code>.log</code> 的所有文件。 类似的比如：</p>
+<pre><code class="console">$ git rm \*~ #该命令为删除以 `~` 结尾的所有文件。</code></pre>
+<p>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 <code>-f</code>（译注：即 force 的首字母）。 </p>
+</li>
+</ul>
+<p>  另外一种情况是，我们想把文件从 Git 仓库中删除（亦即从暂存区域移除），但仍然希望保留在当前工作目录中。 换句话说，你想让文件保留在磁盘，但是并不想让 Git 继续跟踪。 当你忘记添加 <code>.gitignore</code> 文件，不小心把一个很大的日志文件或一堆 <code>.a</code> 这样的编译生成文件添加到暂存区时，这一做法尤其有用。 为达到这一目的，使用 <code>--cached</code> 选项：</p>
+<pre><code class="console">  $ git rm --cached README</code></pre>
+<ul>
+<li><p>移动文件</p>
+<pre><code class="console">$ git mv README.md README
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+    renamed:    README.md -&gt; README</code></pre>
+</li>
+</ul>
+<h1 id="todolist"><a href="#todolist" class="headerlink" title="todolist"></a>todolist</h1>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 q_tnt@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2020-2022 TNT</p>

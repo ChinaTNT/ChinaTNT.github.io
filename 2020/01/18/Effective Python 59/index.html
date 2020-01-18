@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TNT</title>
+  <title>Effective Python 59 | TNT</title>
   <meta name="keywords" content="">
-  <meta name="description" content="TNT">
+  <meta name="description" content="Effective Python 59 | TNT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC) 完成动">
 <meta property="og:type" content="article">
@@ -58,7 +58,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/glow.png" />
@@ -215,12 +215,45 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Effective Python 59" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#StudyNotes"><span class="toc-text">StudyNotes</span></a></li></ol>
+        <h1 class="article-title">Effective Python 59</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-01-10 22:49:49'>2020-01-18 22:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:249</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
     
 <style>
     .left-col .switch-btn,
@@ -233,20 +266,53 @@
     }
 </style>
 </div>
-            <h1 id="StudyNotes"><a href="#StudyNotes" class="headerlink" title="StudyNotes"></a>StudyNotes</h1><blockquote>
-<p><a href="C_C++">C/C++</a></p>
-<p><a href="Linux">Linux</a></p>
-<p><a href="python">python</a></p>
-<p><a href="Web基础">Web基础</a></p>
-<p><a href="代码管理">代码管理</a></p>
-<p><a href="数据库">数据库</a></p>
-<p><a href="网络基础">网络基础</a></p>
-<p><a href="小技巧">小技巧</a></p>
-</blockquote>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>确认版本 python2 0r python3</p>
+<p>python –version</p>
+<p>python –version</p>
+</li>
+</ol>
+<p>   import sys</p>
+<p>   print(sys.version)</p>
+<p>   print(sys.version_info)</p>
+<ol start="2">
+<li><p>遵循PEP 8风格 （8号Python增强协议）</p>
+<p>使用空格代替制表符</p>
+<p>每行字符数不超过79</p>
+<p>和语法相关的每一层缩进为4个空格</p>
+<p><strong>占据多行的表达式，除首行之外其余各行应该在缩进的级别上再加4个空格</strong></p>
+<p>文件中函数与类之间用两行隔开</p>
+<p>同一个类，方法之间一行隔开</p>
+<p>使用下标获取元素、调用函数或给键值参数赋值，不要加空格</p>
+<p>函数、变量及属性应该用小写字母，单词之间用下划线</p>
+<p>类和异常用每个首字母大写的方式表示，单词间用下划线</p>
+<p>模块级别的常用采用全大写字母拼写，单词间用下划线</p>
+<p>受保护的实例属性，用单个下划线开头</p>
+<p>私有属性，两个下划线开头</p>
+</li>
+<li><p>了解bytes、str与unicode</p>
+</li>
+</ol>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 q_tnt@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2020-2022 TNT</p>

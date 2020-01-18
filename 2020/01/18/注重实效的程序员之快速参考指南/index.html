@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>注重实效的程序员之快速参考指南 | TNT</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="注重实效的程序员之快速参考指南 | TNT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC) 完成动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鸟哥的私房菜">
+<meta property="og:url" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/index.html">
+<meta property="og:site_name" content="TNT">
+<meta property="og:description" content="计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC) 完成动">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%8C%87%E4%BB%A4%E9%9B%86%E4%B8%BE%E4%BE%8B.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/DDR%E5%9E%8B%E5%8F%B7.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/SRAM%E9%9D%99%E6%80%81%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%86%85%E5%AD%98.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/PCI-Express.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/PCIe.png">
+<meta property="article:published_time" content="2020-01-18T14:30:46.835Z">
+<meta property="article:modified_time" content="2020-01-18T15:38:41.063Z">
+<meta property="article:author" content="China TNT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%8C%87%E4%BB%A4%E9%9B%86%E4%B8%BE%E4%BE%8B.png">
+
+
+<link rel="icon" href="/img/glow.png">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/glow.png" />
+</a>
+<div class="author">
+    <span>China TNT</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/ChinaTNT" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:q_tnt@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(7)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="7">
+<input type="hidden" id="yelog_site_word_count" value="7.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/01/18/Effective%20Python%2059/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Effective Python 59">Effective Python 59</span>
+            <span class="post-date" title="2020-01-18 22:30:35">2020/01/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/18/Git/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2020-01-18 22:30:17">2020/01/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/18/README/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="README">README</span>
+            <span class="post-date" title="2020-01-18 22:29:03">2020/01/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/18/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-01-18 20:06:56">2020/01/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/18/note/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="note">note</span>
+            <span class="post-date" title="2020-01-18 22:29:57">2020/01/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/18/%E6%B3%A8%E9%87%8D%E5%AE%9E%E6%95%88%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B9%8B%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83%E6%8C%87%E5%8D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="注重实效的程序员之快速参考指南">注重实效的程序员之快速参考指南</span>
+            <span class="post-date" title="2020-01-18 22:29:57">2020/01/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="鸟哥的私房菜">鸟哥的私房菜</span>
+            <span class="post-date" title="2020-01-18 22:30:46">2020/01/18</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-注重实效的程序员之快速参考指南" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">注重实效的程序员之快速参考指南</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-01-18 19:43:50'>2020-01-18 22:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>参考Tips</p>
+</blockquote>
+<ol>
+<li><em>关心你的技艺 Care About Your Craft</em><br>如果你不在乎能否漂亮的开发出软件，你又为何要耗费生命去开发软件呢？</li>
+</ol>
+<ol start="2">
+<li><em>思考！你的工作 Think! About Your Work</em><br>关掉自动驾驶仪，接管操作。不断地批评和评估你的工作。</li>
+</ol>
+<ol start="3">
+<li><em>提供各种选择，不要找蹩脚的借口 Provide Options, Don’t Make Lame Excuses</em><br>要提供各种选择，而不是找借口。不要说事情做不到；说明能够做什么。</li>
+</ol>
+<ol start="4">
+<li><em>使质量成为需求问题 Make Quality a Requirements lssue</em><br>让你的用户参与确定项目真正的质量需求。</li>
+</ol>
+<ol start="5">
+<li><em>定期为你的知识资产投资 Invest Regularly in Your Knowledge Portfolio</em><br>让学习成为习惯。</li>
+</ol>
+<ol start="6">
+<li><em>批判地分析你读到的和听到的 Critically Analyze What You Read and Hear</em><br>不要被供应商、媒体炒作、或教条左右。要依照你自己的看法和你的项目的情况去对信息进行分析。</li>
+</ol>
+<ol start="7">
+<li><em>你说什么和你怎么说同样重要 It’s both What You Say and the Way You Say it</em><br>如果你不能有效地向他人传达你的了不起的想法，这些想法就毫无用处。</li>
+</ol>
+<ol start="8">
+<li><em>不要重复你自己 DRY - Don’t Repeat Yourself</em><br>系统中的每一项知识都必须具有单一、无歧义、权威的表示。</li>
+</ol>
+<ol start="9">
+<li><em>让复用变得容易 Make It Easy to Reuse</em><br>如果复用很容易，人们就会去复用。创造一个支持复用的环境。</li>
+</ol>
+<ol start="10">
+<li><em>消除无关事物之间的影响 Eliminate Effects Between Unrelated Things</em><br>设计自足、独立、并具有单一、良好定义的目的的组件。</li>
+</ol>
+<ol start="11">
+<li>不存在最终决策 There Are No Final Decisions<br>没有决策是浇铸在石头上的。相反，要把每项决策都视为是写在沙滩上的，并为变化做好计划。</li>
+</ol>
+<ol start="12">
+<li><p><em>用曳光弹找到目标 Use Tracer Bullets to Find the Target</em></p>
+<p>曳光弹能通过试验各种事物并检查它们离目标有多远来让你追踪目标。</p>
+</li>
+</ol>
+<ol start="13">
+<li><em>为了学习而制作原型 Prototype to Learn</em><br>原型制作是一种学习经验。其价值并不在于所产生的代码，而在于所学到的经验教训。</li>
+</ol>
+<ol start="14">
+<li><em>靠近问题领域编程 Program Close to the Problem domain</em><br>用你的用户的语言进行设计和编码。</li>
+</ol>
+<ol start="15">
+<li><em>估算，以避免发生意外 Estimate to Avoid Surprises</em><br>在着手之前先进行估算。你将提前发现潜在的问题。</li>
+</ol>
+<ol start="16">
+<li><em>通过代码对进度表进行迭代 Iterate the Schedule with the Code</em><br>用你在进行实现时获得的经验提炼项目的时间标度。</li>
+</ol>
+<ol start="17">
+<li><em>用纯文本保存知识 Keep Knowledge in Plain Text</em><br>纯文本不会过时。它能够帮助你有效利用你的工作。并简化掉时和测试。</li>
+</ol>
+<ol start="18">
+<li><em>利用命令shell的力量 Use the Power of Command Shells</em><br>当图形用户界面无能为力时使用shell。</li>
+</ol>
+<ol start="19">
+<li><em>用好一种编辑器 Use a Single Editor Well</em><br>编辑器应该是你的手的延伸；确保你的编辑器是可配置、科扩展和可编程的。</li>
+</ol>
+<ol start="20">
+<li><em>总是使用源码控制 Always Use Source Code Control</em><br>源码控制是你的工作的时间机器–你能够回到过去。</li>
+</ol>
+<ol start="21">
+<li><em>要修正问题，而不是发出指责 Fix the Problem, Not the Blame</em><br>bug是你的过错还是别人的过错，并不是真的很有关系–它仍然是你的问题，它仍然需要修正。</li>
+</ol>
+<ol start="22">
+<li><em>调试时不要恐慌 Don’t Panic When Debuging</em><br>做一次深呼吸，思考什么可能是bug的原因。</li>
+</ol>
+<ol start="23">
+<li><em>“Select”没有问题 “Select” Isn’t Broken</em><br>在OS或编译器、甚或是第三方产品或库中很少发现bug。bug很可能在应用中。</li>
+</ol>
+<ol start="24">
+<li><em>不要假定，要证明 Don’t Assume It - Prove It</em><br>在实际环境中–使用真正的数据和辩解条件–证明你的假定。</li>
+</ol>
+<ol start="25">
+<li><p><em>学习一种文本操纵语言 Learn a Text Manipulation Language</em></p>
+<p>你用每天的很大一部分时间处理文本，为什么不让计算机替你完成部分工作呢？</p>
+</li>
+</ol>
+<ol start="26">
+<li><em>编写能编写代码的代码 Write Code That Writes Code</em><br>代码生成器能提高你的生产率，并有助于避免重复。</li>
+</ol>
+<ol start="27">
+<li><em>你不可能写出完美的软件 You Can’t Write Perfect Software</em><br>软件不可能完美。保护你的代码和用户，使它（他）们免于能够预见的错误。</li>
+</ol>
+<ol start="28">
+<li><em>通过合约进行设计 Design with Contracts</em><br>使用合约建立文档，并检验代码所做的事情正好是它声明要做的。</li>
+</ol>
+<ol start="29">
+<li><em>早崩溃 Crash Early</em><br>死程序造成的危害通常比有问题的程序要小得多。</li>
+</ol>
+<ol start="30">
+<li><em>用断言避免不可能发生的事情 Use Assertions to Prevent the Impossible</em><br>断言验证你的各种假定。在一个不确定的世界里，用断言保护你的代码。</li>
+</ol>
+<ol start="31">
+<li><em>将异常用于异常的问题 Use Exceptinos for Exceptional Problems</em><br>异常可能会遭受经典的意大利面条式代码的所有可读性和可维护性问题的折磨。将异常保留给异常的事物。</li>
+</ol>
+<ol start="32">
+<li><em>要有始有终 Finish What You Start</em><br>只要可能，分配某资源的例程或对象也应该负责解除其分配。</li>
+</ol>
+<ol start="33">
+<li><em>使模块之间的耦合减至最少 Minimize Coupling Between Modules</em><br>通过编写“羞怯的”代码并应用得墨忒耳法则来避免耦合。</li>
+</ol>
+<ol start="34">
+<li><em>要配置，不要集成 Configure, Don’t Integrate</em><br>要将应用的各种技术选择实现为配置选项，而不是通过集成或工程方法实现。</li>
+</ol>
+<ol start="35">
+<li><em>将抽象放进代码，细节放进元数据 Put Abstractions in Code, Details in Metadata</em><br>为一般情况编程，将细节放在被编译的代码库之外。</li>
+</ol>
+<ol start="36">
+<li><em>分析工作流，以改善并发性 Analyze Workflow to Imporve Concurrency</em><br>利用你的用户的工作流中的并发性。</li>
+</ol>
+<ol start="37">
+<li><em>用服务进行设计 Design Using Services</em><br>根据服务–独立的、在良好定义、一致的接口之后的兵法对象–进行设计。</li>
+</ol>
+<ol start="38">
+<li><p><em>总是为并发进行设计 Always Design for Concurrency</em></p>
+<p>容许并发，你将会设计出更整洁、具有更少假定的接口。</p>
+</li>
+</ol>
+<ol start="39">
+<li><p><em>使视图与模型分离 Separate Views from Models</em></p>
+<p>要根据模型和视图设计你的应用，从而以低廉的代码获取灵活性。</p>
+</li>
+</ol>
+<ol start="40">
+<li><p><em>用黑板协调工作流 Use Blackboards to Coordinate Workflow</em></p>
+<p>用黑板协调完全不同的事实和因素，同时又使各参与方保持独立和隔离。</p>
+</li>
+</ol>
+<ol start="41">
+<li><p><em>不要靠巧合编程 Don’t Program by Coincidence</em></p>
+<p>只依靠可靠的事物。注意偶发的复杂性，不要把幸运的巧合与有目的的计划混为一谈。</p>
+</li>
+</ol>
+<ol start="42">
+<li><p><em>估算你的算法的阶 Estimate the Order of Your Algorithms</em></p>
+<p>在你编写代码之前，先大致估算事情需要多长时间。</p>
+</li>
+</ol>
+<ol start="43">
+<li><p><em>测试你的估算 Test Your Estimates</em></p>
+<p>对算法的数学分析并不会告诉你每一件事情。在你的代码的目标环境中测定它的速度。</p>
+</li>
+</ol>
+<ol start="44">
+<li><p><em>早重构，常重构 Refactor Early, Refactor Often</em></p>
+<p>就和你会在华园里除草、并重新布置一样，在需要时对代码进行重写、重做和重新架构。要铲除问题的根源。</p>
+</li>
+</ol>
+<ol start="45">
+<li><p><em>为测试而设计 Design to Test</em></p>
+<p>在你还没有编写代码时就开始思考测试问题。</p>
+</li>
+</ol>
+<ol start="46">
+<li><p><em>测试你的软件，否则你的用户就得测试 Test Your Software, or Your Users Will</em></p>
+<p>无情地测试。不要让你的用户为你查找bug。</p>
+</li>
+</ol>
+<ol start="47">
+<li><p><em>不要使用你不理解的向导代码 Don’t Use Wizard Code You Don’t Understand</em></p>
+<p>想到可以生成大量代码。在你把它们合并进你的项目之前，确保你理解全部这些代码。</p>
+</li>
+</ol>
+<ol start="48">
+<li><p><em>不要搜集需求–挖掘它们 Don’t Gather Requirements - Dig for Them</em></p>
+<p>需求很少存在于表面上。它们深深地埋藏在层层假定、误解和政治手段的下面。</p>
+</li>
+</ol>
+<ol start="49">
+<li><p><em>与用户一同工作，以像用户一样思考 Work with a User to Think Like a User</em></p>
+<p>要了解系统实际上将如何被使用，这是最好的方法。</p>
+</li>
+</ol>
+<ol start="50">
+<li><p><em>抽象比细节活得更长久 Abstractions Live Longer than Details</em></p>
+<p>“投资”于抽象，而不是实现。</p>
+</li>
+</ol>
+<ol start="51">
+<li><p><em>使用项目词汇表 Use a Project Glossary</em></p>
+<p>创建并维护项目中使用的专用术语和词汇的单一信息源。</p>
+</li>
+</ol>
+<ol start="52">
+<li><p><em>不要在盒子外面思考–要找到盒子 Don’t Think Outside the Box - Find the Box</em></p>
+<p>在遇到不可能解决的问题时，要确定真正的约束。问问你自己：“它必须以这种方式完成吗？ 它真的必须完成吗？”</p>
+</li>
+</ol>
+<ol start="53">
+<li><p><em>等你准备好再开始 Start When You’re Ready</em></p>
+<p>你的一生都在积累经验。不要忽视反复出现的疑惑。</p>
+</li>
+</ol>
+<ol start="54">
+<li><p><em>对有些事情“做”胜于“描述” Some Things Are Better Done than Described</em></p>
+<p>不要掉进规范的螺旋</p>
+</li>
+</ol>
+<ol start="55">
+<li><p><em>不要做形式方法的奴隶 Don’t Be a Slave to Formal Methods</em></p>
+<p>如果你没有把某项技术放进你的开发时间和能力的语境中，不要盲目地采用它。</p>
+</li>
+</ol>
+<ol start="56">
+<li><p><em>昂贵的工具不一定能制作出更好的设计 Costly Tools Don’t Produce Better Disigns</em></p>
+<p>小心供应商的炒作，行业教条，以及价格标签的诱惑。要根据工具的价值判断它们。</p>
+</li>
+</ol>
+<ol start="57">
+<li><p><em>围绕功能组织团队 Organize Teams Around Fucntionality</em></p>
+<p>不要把设计师与编码员分开，也不要把测试员与数据建模员分开。按照你构建代码的方式构建团队。</p>
+</li>
+</ol>
+<ol start="58">
+<li><p><em>不要使用手工流程 Don’t Use Manual Procedures</em></p>
+<p>shell脚本或批文件会一次次地以同一顺序执行同样的指令。</p>
+</li>
+</ol>
+<ol start="59">
+<li><p><em>早测试，常测试，自动测试。 Test Early. Test Often. Test Automatically</em></p>
+<p>与呆在书架上的测试计划相比，每次构建试运行的测试要有效得多。</p>
+</li>
+</ol>
+<ol start="60">
+<li><p><em>要到通过全部测试，编码才算完成。 Coding Ain’t Done ‘Til All the Tests Run</em></p>
+<p>就是这样。</p>
+</li>
+</ol>
+<ol start="61">
+<li><p><em>通过“蓄意破坏”测试你的测试。 Use Saboteurs to Test Your Testing</em></p>
+<p>在单独的软件副本上故意引入bug，以检验测试能够抓住它们。</p>
+</li>
+</ol>
+<ol start="62">
+<li><p><em>测试状态覆盖，而不是代码覆盖 Test State Coverage, Not Code Coverage</em></p>
+<p>确定并测试重要的程序状态。只是测试代码行是不够的。</p>
+</li>
+</ol>
+<ol start="63">
+<li><em>一个bug只抓一次 Find Bugs Once</em><br>一旦测试员找到一个bug，这应该是测试员最后一次找到它。此后自动测试应该对其进行检查。</li>
+</ol>
+<ol start="64">
+<li><em>英语就是一种编程语言 English is Just a Programming Language</em><br>像你编写代码一样编写文档：遵守DRY原则、使用元数据、MVC、自动生成、等等。</li>
+</ol>
+<ol start="65">
+<li><em>把文档建在里面，不要栓在外面 Build Documentation In, Don’t Bolt It On</em><br>与代码分离的文档不太可能被修正和更新。</li>
+</ol>
+<ol start="66">
+<li>温和地超出用户的期望 Gently Exceed Your Users’ Expectations<br>要理解你的用户的期望，然后给他们的东西要多那么一点。</li>
+</ol>
+<ol start="67">
+<li><p><em>在你的作品上签名 Sign Your Work</em><br>过去时代的手艺人为能在他们作品上签名而自豪。你也应该如此。</p>
+</li>
+<li><p><em>做变化的催化剂 Be a Catalyst for Change</em><br>你不能强迫人们改变。相反，要向他们展示未来可能会怎样，并帮助他们参与对未来的创造。</p>
+</li>
+</ol>
+<ol start="5">
+<li><em>不要容忍破窗户 Don’t Live with Broken Windows</em><br>当你看到糟糕的设计、错误的决策和糟糕的代码时，修正它们。</li>
+</ol>
+<ol start="6">
+<li><em>记住大图景 Remember the Big Picture</em><br>不要太过专注于细节，以至忘了查看你周围正在发生什么。</li>
+</ol>
+<blockquote>
+<p>检查清单</p>
+</blockquote>
+<ol start="71">
+<li><em>要学习的语言</em><br>厌倦了C、C++和JAVA？试试CLOS、Dylan、Eiffel、Objectve C、Prolog、Smailltalk或TOM。它们每一种都有不同的能力和不同的“风味”。用其中的一种或多种语言在家里开发一个小项目。</li>
+</ol>
+<ol start="72">
+<li><em>WISDOM离合诗</em><br>What do you want them to learn? 你想让他们学到什么？<br>What is their interest in what you’ve got to say? 他们对你讲的什么感兴趣？<br>How sophisticated are they? 他们有多富有经验？<br>How much detail do they want? 他们想要多少细节？<br>Whom do you want to own the information? 你想要让谁拥有这些信息？<br>How can you motivate them to listen to you? 你如何促使他们听你说话？</li>
+</ol>
+<ol start="73">
+<li><em>怎样维持正交性</em><br>设计独立、良好定义的组件。<br>使你的代码保持解耦。<br>避免使用全局数据。<br>重构相似的函数。</li>
+</ol>
+<ol start="74">
+<li><em>应制作原型的事物</em><br>架构<br>已有系统中的新功能<br>外部数据的结构或内容<br>第三方工具或组件<br>性能问题<br>用户界面设计</li>
+</ol>
+<ol start="75">
+<li><em>架构问题</em><br>责任是否得到了良好定义？<br>写作是否得到了良好定义？<br>耦合是否得以最小化？<br>你能否确定潜在的重复？<br>接口定义和各项约束是否可接受？<br>模块能否在需要时访问所需数据？</li>
+</ol>
+<ol start="76">
+<li><p><em>调试检查清单</em><br>正在报告的问题是底层bug的直接结果，还是只是症状？<br>bug真的在编译器里？在OS里？或者是在你的代码里？<br>如果你向同事详细解释这个问题，你会说什么？<br>如果可疑代码通过了单元测试，测试是否足够完整？如果你用该数据运行单元测试，会发生什么？</p>
+<p>​        造成这个bug的条件是否存在于系统中的其它任何地方？</p>
+</li>
+</ol>
+<ol start="77">
+<li><em>函数的得墨忒耳法则</em><br>某个对象的方法应该只调用属于以下情况的方法：<br>它自身<br>传入的任何参数<br>它创建的对象<br>组件对象</li>
+</ol>
+<ol start="78">
+<li><em>怎样深思熟虑地编程</em><br>总是意识到你在做什么。<br>不要盲目地编程。<br>按照计划行事。<br>依靠可靠的事物。<br>为你的假定建立文档。<br>不要只是测试你的代码，还要测试你的假定。<br>维护的工作划分优先级。<br>不要做历史的奴隶。</li>
+</ol>
+<ol start="79">
+<li><em>何时进行重构</em><br>你发现了对DRY原则的违反。<br>你发现事物可以更为正交。<br>你的知识扩展了。<br>需求演变了。<br>你需要改善性能。</li>
+</ol>
+<ol start="80">
+<li><em>劈开戈尔迪斯结</em><br>在解决不可能解决的问题时，问问你自己：<br>有更容易的方法吗？<br>我是在解决正确的问题吗？<br>这件事情为什么是一个问题？<br>是什么使它如此难以解决？<br>它必须以这种方式完成吗？<br>它真的必须完成吗？</li>
+</ol>
+<ol start="81">
+<li><p><em>测试的各个方面</em></p>
+<p>单元测试<br>集成测试<br>炎症和校验<br>资源耗尽、错误及恢复<br>性能测试<br>可用性测试<br>对测试自身进行测试</p>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 q_tnt@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2020-2022 TNT</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
