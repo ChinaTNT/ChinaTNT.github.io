@@ -6,21 +6,71 @@
   <meta name="keywords" content="">
   <meta name="description" content="鸟哥的私房菜 | TNT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC) 完成动">
+<meta name="description" content="CH0 计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="鸟哥的私房菜">
 <meta property="og:url" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/index.html">
 <meta property="og:site_name" content="TNT">
-<meta property="og:description" content="计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC) 完成动">
+<meta property="og:description" content="CH0 计算机概论 计算机组成单元 计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。 数据都是流经CPU内部的主存储器在转出去的，至于数据会流进&#x2F;流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器  CPU种类  精简指令集(Reduced Instruction Set Computing, RISC)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%8C%87%E4%BB%A4%E9%9B%86%E4%B8%BE%E4%BE%8B.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/DDR%E5%9E%8B%E5%8F%B7.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/SRAM%E9%9D%99%E6%80%81%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%86%85%E5%AD%98.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/PCI-Express.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/PCIe.png">
-<meta property="og:image" content="http://yoursite.com/StudyNotes/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E8%A1%A8%E7%9A%84%E4%BD%9C%E7%94%A8%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E8%A1%A8%E7%9A%84%E4%BD%9C%E7%94%A8%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E5%88%86%E5%8C%BA%E5%9B%9B%E4%B8%AA%E4%BB%A5%E4%B8%8A.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%98.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%98%E7%AD%94%E6%A1%88.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%982.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%982%E7%AD%94%E6%A1%88.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/GPT%E5%88%86%E5%8C%BA%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E8%AF%AD%E7%B3%BB%E4%BF%AE%E6%94%B9.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E7%AE%80%E5%8D%95%E7%9A%84%E5%91%BD%E4%BB%A4.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B0%8F%E6%95%B0%E9%99%A4%E6%B3%95.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/man%E4%B8%AD1%E7%9A%84%E5%90%AB%E4%B9%89.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/nano%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/nano%E6%8C%87%E4%BB%A4%E8%AF%B4%E6%98%8E.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/shutdown%E8%AF%B4%E6%98%8E.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%E8%A7%A3%E6%9E%90.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%9D%83%E9%99%90%E4%BE%8B%E9%A2%981.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E6%94%B9%E5%8F%98%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%9D%83%E9%99%90%E6%B1%87%E6%80%BB.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%9D%83%E9%99%90%E7%90%86%E8%A7%A3%E8%A1%A81.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%951.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%952.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%953.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%954.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%955.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E7%9B%AE%E5%BD%95%E6%A0%91%E6%9E%B6%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/ls.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/cp.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/cp%E8%8C%83%E4%BE%8B6.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/rm%E5%8F%82%E6%95%B0.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/rm%E7%9A%84%E7%89%B9%E6%AE%8A%E4%BE%8B%E5%AD%90.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/mv%E7%A4%BA%E4%BE%8B.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/basename%E4%B8%8Edirname.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/cat.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/nl.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/more%E6%8C%89%E9%94%AE.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/less%E6%8C%89%E9%94%AE.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/head.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/tail.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/od.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/touch.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/chattr.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/lsattr.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/suid.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/find.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/find_time.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/find3.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/whereis.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/locate.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/updatedb.png">
 <meta property="article:published_time" content="2020-01-18T14:30:46.835Z">
-<meta property="article:modified_time" content="2020-01-26T04:37:31.355Z">
+<meta property="article:modified_time" content="2020-01-27T16:02:36.072Z">
 <meta property="article:author" content="China TNT">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/01/18/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E6%8C%87%E4%BB%A4%E9%9B%86%E4%B8%BE%E4%BE%8B.png">
@@ -109,7 +159,7 @@
     <div></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="7.5k">
+<input type="hidden" id="yelog_site_word_count" value="10.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -230,12 +280,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-26 12:37:31'>2020-01-18 22:30</time>
+        创建时间:<time class="date" title='更新时间: 2020-01-28 00:02:36'>2020-01-18 22:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.4k</span>
+        <span>字数:3.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -254,7 +304,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机概论"><span class="toc-text">计算机概论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH1-Linux是什么"><span class="toc-text">CH1 Linux是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH2-主机规划与磁盘分区"><span class="toc-text">CH2 主机规划与磁盘分区</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CH0-计算机概论"><span class="toc-text">CH0 计算机概论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH1-Linux是什么"><span class="toc-text">CH1 Linux是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH2-主机规划与磁盘分区"><span class="toc-text">CH2 主机规划与磁盘分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH3-安装CentOS-7-x"><span class="toc-text">CH3 安装CentOS 7.x</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH4-首次登陆与线上求助"><span class="toc-text">CH4 首次登陆与线上求助</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH5-Linux的文件权限与目录配置"><span class="toc-text">CH5 Linux的文件权限与目录配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CH6-Linux文件与目录管理"><span class="toc-text">CH6 Linux文件与目录管理</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -270,7 +320,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="计算机概论"><a href="#计算机概论" class="headerlink" title="计算机概论"></a>计算机概论</h1><ul>
+        <h1 id="CH0-计算机概论"><a href="#CH0-计算机概论" class="headerlink" title="CH0 计算机概论"></a>CH0 计算机概论</h1><ul>
 <li><p>计算机组成单元</p>
 <p>计算机组成：输入单元、处理单元（CPU内部控制单元+算术逻辑单元）、输出单元、存储单元（外部存储器+CPU内部的主存储器）。</p>
 <p><code>数据都是流经CPU内部的主存储器在转出去的，至于数据会流进/流出内存则是CPU发出的控制命令实现，实际处理的数据完全来自主存储器</code></p>
@@ -287,7 +337,7 @@
 </li>
 </ol>
 <p><code>指令集：软件都经过CPU内部转换成微指令来执行</code></p>
-<img src="指令集举例.png" alt="微指令集" style="zoom:200%;" />
+<p><img src="%E6%8C%87%E4%BB%A4%E9%9B%86%E4%B8%BE%E4%BE%8B.png" alt="微指令集"></p>
 </li>
 <li><p>接口设备</p>
 <p>最重要的接口设备–主板（负责将所有设备通通连一起）</p>
@@ -363,13 +413,13 @@
 </ul>
 </li>
 </ul>
-<img src="./DDR型号.png" alt="DDR型号" style="zoom:100%;" />
+<img src="DDR型号.png" alt="DDR型号" style="zoom:100%;" />
 </li>
 <li><p>双通道设计</p>
 <p>拓展传统总线的宽度，将两个内存汇总在一起以达到128bit，就是双通道的设计理念。</p>
 </li>
 <li><p>DRAM与SRAM(Static Random Access Memory,SRAM)</p>
-<p><img src="./SRAM%E9%9D%99%E6%80%81%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%86%85%E5%AD%98.png" alt="SRAM"></p>
+<p><img src="SRAM%E9%9D%99%E6%80%81%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%86%85%E5%AD%98.png" alt="SRAM"></p>
 <p>L2 cache就是静态随机存储内存，SRAM在设计上使用晶体管数量较多，价格高不易做成大容量，但其速度快，因此整合到CPU成为高速缓存。</p>
 </li>
 <li><p>只读存储器ROM</p>
@@ -383,8 +433,8 @@
 <p>厂商用闪存做的，数据延迟低、省电、寿命较机械硬盘短。</p>
 </li>
 <li><p>显卡插槽</p>
-<p><img src="./PCI-Express.png" alt=""></p>
-<p><img src="./PCIe.png" alt="PCIe"></p>
+<p><img src="PCI-Express.png" alt=""></p>
+<p><img src="PCIe.png" alt="PCIe"></p>
 </li>
 <li><p>操作系统</p>
 <p>简单理解为核心和相关的用户应用软件。只管理整个硬件资源（CPU、内存、输入输出装置及文件系统文件。）</p>
@@ -407,7 +457,9 @@
 </li>
 <li><p>网络服务问题，到/var/log/目录中查询log file文件解决</p>
 </li>
-<li><p>常见设备在Linux当中的文件名</p>
+<li><p>设备在linux中以文件的形式存在，常用设备如下表</p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -452,10 +504,325 @@
 <td>/dev/scd[0-1]</td>
 </tr>
 </tbody></table>
-</li>
-</ol>
+<p>​    </p>
 <h1 id="CH2-主机规划与磁盘分区"><a href="#CH2-主机规划与磁盘分区" class="headerlink" title="CH2 主机规划与磁盘分区"></a>CH2 主机规划与磁盘分区</h1><p>磁盘分区演进：MBR -&gt; GPT</p>
-<p><img src="../../../../StudyNotes/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E8%A1%A8%E7%9A%84%E4%BD%9C%E7%94%A8%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=" ">  </p>
+<img src="磁盘分区表的作用示意图.png" style="" alt="DDR型号" style="zoom:100%;">   
+
+<p>所谓分区是针对64 Bytes进行分区设置，默认的分区表仅能写入四组分区信息，这四个分区的记录被称为主要（Primary）或延伸（Extended）分区。延伸分区最多只能有一个且不能被格式化（操作系统限制，当然可以没有延伸分区）。</p>
+<p>分区的最小单位“通常”为柱面。</p>
+<p>超过四个区是通过延伸分区的方式处理。分出的区域为逻辑分区。</p>
+<p><img src="%E5%88%86%E5%8C%BA%E5%9B%9B%E4%B8%AA%E4%BB%A5%E4%B8%8A.png" alt=""></p>
+<p><img src="%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%98.png" alt=""></p>
+<p><img src="%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%98%E7%AD%94%E6%A1%88.png" alt=""></p>
+<p><img src="%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%982.png" alt=""></p>
+<p><img src="%E5%88%86%E5%8C%BA%E4%BE%8B%E9%A2%982%E7%AD%94%E6%A1%88.png" alt=""></p>
+<p>GPT分区已经没有延伸分区与逻辑分区的概念，你可以想象所有分区都是主分区。</p>
+<p><img src="GPT%E5%88%86%E5%8C%BA%E7%BB%93%E6%9E%84.png" alt=""></p>
+<p>开机流程</p>
+<p><strong>BIOS -&gt; MBR -&gt; boot loader -&gt; 核心文件 -&gt; 操作系统</strong></p>
+<ol>
+<li>BIOS：开机主动执行的固件，会认识第一个可开机的设备；</li>
+<li>MBR：第一个可开机设备的第一个扇区内的主要开机记录区块，内含开机管理程序。</li>
+<li>开机管理程序（boot loader）：一支可读取核心文件来执行的软件；<ul>
+<li>提供菜单：使用者可以选择不同的开机项目，这也是多重开机的重要功能。</li>
+<li>载入核心文件：直接指向可开机的程序区段来开始操作系统。</li>
+<li>转交其他loader：将开机管理功能转交给其他loader负责。</li>
+</ul>
+</li>
+<li>核心文件：开始操作系统的功能…</li>
+</ol>
+<p>UEFI与BIOS</p>
+<p>文件系统与目录数的关系</p>
+<p>挂载：利用一个目录当成进入点，将磁盘分区的数据放置在该目录下。</p>
+<h1 id="CH3-安装CentOS-7-x"><a href="#CH3-安装CentOS-7-x" class="headerlink" title="CH3 安装CentOS 7.x"></a>CH3 安装CentOS 7.x</h1><p>swap：磁盘仿真成为内存，由于swap并不会使用目录树的挂载，所以用sawp就不需要指定挂载点。</p>
+<p>xfs：CentOS默认的文件系统。</p>
+<h1 id="CH4-首次登陆与线上求助"><a href="#CH4-首次登陆与线上求助" class="headerlink" title="CH4 首次登陆与线上求助"></a>CH4 首次登陆与线上求助</h1><p><img src="%E8%AF%AD%E7%B3%BB%E4%BF%AE%E6%94%B9.png" alt=""></p>
+<p>基础指令操作</p>
+<p><img src="%E7%AE%80%E5%8D%95%E7%9A%84%E5%91%BD%E4%BB%A4.png" alt=""></p>
+<p><img src="%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B0%8F%E6%95%B0%E9%99%A4%E6%B3%95.png" alt=""></p>
+<p>Ctrl+d 代表exit</p>
+<p>Shift+Page Up 代表向前翻页</p>
+<p>Shift+Page Down 代表向后翻页</p>
+<p>man</p>
+<p>​        是manual（操作说明的简写）</p>
+<p>​        man date将输出以下信息，<em>在此页面中输入 /abc ，可以对abc进行向下查找，输入？abc，可以对abc进行向上搜索，搜索后按n进行向下搜索，按N进行向上搜索</em>。</p>
+<p>​        ![](man date.png)</p>
+<p>括号中1的含义：(<code>表中1，5，8三个号码特别重要，必须熟记</code>)</p>
+<p><img src="man%E4%B8%AD1%E7%9A%84%E5%90%AB%E4%B9%89.png" alt=""></p>
+<p>超简单文本编辑器 – nano</p>
+<p>nano text.txt#打开一text.txt文件</p>
+<p><img src="nano%E6%8C%87%E4%BB%A4.png" alt=""></p>
+<p>按Ctrl+G或F1 能调出详细说明</p>
+<p><img src="nano%E6%8C%87%E4%BB%A4%E8%AF%B4%E6%98%8E.png" alt=""></p>
+<p>正确的关机指令使用</p>
+<ul>
+<li>将数据同步写入硬盘中的指令 sync</li>
+<li>惯用的关机指令 shutdown</li>
+<li>重新开机，关机 reboot，halt，poweroff</li>
+</ul>
+<p><img src="shutdown%E8%AF%B4%E6%98%8E.png" alt=""></p>
+<h1 id="CH5-Linux的文件权限与目录配置"><a href="#CH5-Linux的文件权限与目录配置" class="headerlink" title="CH5 Linux的文件权限与目录配置"></a>CH5 Linux的文件权限与目录配置</h1><p>Linux一般将文件的身份分为三个类别：owner/group/others</p>
+<p>这三种身份均拥有三种权限：read/write/execute</p>
+<p><img src="%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p>
+<p><img src="%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7%E8%A7%A3%E6%9E%90.png" alt=""></p>
+<p><img src="%E6%9D%83%E9%99%90%E4%BE%8B%E9%A2%981.png" alt=""></p>
+<p><code>root不受权限的限制，默认root都能访问，即使权限为---------</code></p>
+<p>改变文件属性与权限</p>
+<ul>
+<li><p>chgrp 改变文件所属群组</p>
+<pre><code class="shell">chgrp users file.txt
+如果连同目录下的所有次目录或者文件同时更改文件拥有者的话，直接加上-R的选项即可 </code></pre>
+</li>
+<li><p>chown 改变文件拥有者</p>
+<pre><code class="shell">chown [-R] 用户拥有者 文件或目录
+chown [-R] 用户拥有者：群组名称 文件或目录
+如果连同目录下的所有次目录或者文件同时更改文件拥有者的话，直接加上-R的选项即可 </code></pre>
+</li>
+</ul>
+<ul>
+<li><p>chmod 改变文件的权限，SUID,SGID,SBIT等等特性</p>
+<ul>
+<li><p>各权限分数对照表</p>
+<p>r：4</p>
+<p>w：2</p>
+<p>x：1</p>
+<p>eg  -rwx rwx —</p>
+<p>​        owner = rwx = 4+2+1=7</p>
+<p>​        group = rwx = 4+2+1=7</p>
+<p>​        others = — = 0+0+0=0</p>
+<pre><code>chmod 644 .bashrc</code></pre></li>
+<li><p>符号类型改变文件权限</p>
+<p><img src="%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E6%94%B9%E5%8F%98%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90.png" alt=""></p>
+<pre><code>#设置权限-rwxr-xr-x
+chmod u=rwx,go=rx .bashrc #注 中间没有空白
+#设置权限-rwxr-xr--
+chmod u=rwx,g=rx,o=r .bashrc
+#给每个人增加写入权限
+chmod a+w .bashrc
+#去掉每个人的写入权限
+chmod a-w .bashrc #注 去掉不存在的权限不会报错</code></pre></li>
+</ul>
+</li>
+<li><p>权限对目录的重要性</p>
+<p>上述权限只针对文件属性，而并不具备删除文件本身的权限</p>
+<p>目录中rwx的重新定义</p>
+<ul>
+<li><p>r （read contents in directory）</p>
+<p>表示可以查看目录的文件名，用ls可以将其显示出来</p>
+</li>
+<li><p>w （modify contents of diectory）</p>
+<p>你拥有以下权限</p>
+<ul>
+<li>创建新的文件和目录</li>
+<li>删除已经存在的文件和目录</li>
+<li>将已存在的文件或目录更名</li>
+<li>搬移该目录内的文件、目录位置</li>
+</ul>
+</li>
+<li><p>x （access directory）</p>
+<p>与执行文件不同，目录x代表的是使用者能否进入该目录成为工作目录。而切换目录的命令为cd，所以没有x，你cd不进去这个目录。</p>
+</li>
+</ul>
+<p><img src="%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%9D%83%E9%99%90%E6%B1%87%E6%80%BB.png" alt="&quot;文件和目录权限异同&quot;"></p>
+<p>说明：</p>
+<p>我们看到root目录下，用户权限为rwx，却无法删除文件，就是因为它不是目录的拥有者。</p>
+<p>所以，tnt用户删除不了该目录中任何一个文件</p>
+<pre><code>drwxr-xr-x  1 root root    512 Jan 26 22:06 bin
+#可以删除自身目录下的文件，因为该目录用户拥有w权限 
+tnt@TNT-PC:~$ pwd
+/home/tnt
+tnt@TNT-PC:~$ ls -l
+total 497788
+-rwxr-xr-x 1 root root      5047 Jan 26 22:08 znew</code></pre><p><img src="%E6%9D%83%E9%99%90%E7%90%86%E8%A7%A3%E8%A1%A81.png" alt=""></p>
+<p>表格解析：其实r是非必备的，相当摸黑你也能操作文件夹，如上图表格表格中最后一个权限。但没有r的话，你的TAB不能补齐哦。</p>
+<p>所以，通常开放的目录会具备rx这两个权限。而w涉及删除操作，需谨慎对待。</p>
+</li>
+</ul>
+<ul>
+<li><p>常规文件 regular file</p>
+<ul>
+<li><p>纯文本文件 </p>
+<p>可以用cat读出来</p>
+</li>
+<li><p>二进制文件</p>
+<p>可执行文件，例如cat本身就是个二进制文件</p>
+</li>
+<li><p>数据格式文件</p>
+<p>它属于特殊格式的文件，可以用last命令读出来</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6.png" alt=""></p>
+</li>
+<li><p>目录</p>
+</li>
+<li><p>链接文件</p>
+<p>类似快捷方式</p>
+</li>
+<li><p>设备与设备文件</p>
+<ul>
+<li>区块block设备文件 硬盘、软盘等</li>
+<li>字符character设备文件 键盘、鼠标等</li>
+</ul>
+</li>
+<li><p>数据接口文件 sockets</p>
+<p>可通过sockets进行通信</p>
+</li>
+<li><p>管道文件（FIFO， pipe）</p>
+</li>
+</ul>
+</li>
+<li><p>具备可执行权限不一定具备可执行的程序码，只有两者均具备的文件才能被执行。Linux的文件没有所谓的“扩展名”。</p>
+</li>
+</ul>
+<p>Linux文件名称限制</p>
+<p>​        最好避免以下一些特殊字符比较好：</p>
+<pre><code>*? &gt; &lt; ; &amp; ! [ ] | \ &#39; &quot; &quot; &#39; ( ) { } . - + </code></pre><p>Linux目录配置的依据 – FHS</p>
+<ul>
+<li><p>/ （ root, 根目录） ： 与开机系统有关；</p>
+</li>
+<li><p>/usr （ unix software resource） ： 与软件安装/执行有关；</p>
+</li>
+<li><p>/var （ variable） ： 与系统运行过程有关 。</p>
+</li>
+<li><p>FHS标准建议</p>
+<p>根目录所在分区应该越小越好，且应用程序所安装的软件最好不要与根目录放在同一个分区内，保持根目录越小越好。如此不但性能较佳，也不容易发生问题。</p>
+</li>
+</ul>
+<p><img src="FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%951.png" alt=""></p>
+<p><img src="FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%952.png" alt=""></p>
+<p><img src="FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%953.png" alt=""></p>
+<p><img src="FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%954.png" alt=""></p>
+<p><img src="FHS%E5%BF%85%E9%A1%BB%E5%AD%98%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%955.png" alt=""></p>
+<p><img src="%E7%9B%AE%E5%BD%95%E6%A0%91%E6%9E%B6%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p>
+<h1 id="CH6-Linux文件与目录管理"><a href="#CH6-Linux文件与目录管理" class="headerlink" title="CH6 Linux文件与目录管理"></a>CH6 Linux文件与目录管理</h1><p>shell scripts建议使用绝对路径</p>
+<pre><code>.             代表此层目录
+..             代表上一层目录
+-             代表上一次访问的目录
+~             代表“目前使用身份”所在的主文件夹
+~account     代表account这个使用者所在的主文件夹</code></pre><p>cd </p>
+<p>cd - 切换到上一次访问的工作目录</p>
+<p>pwd 是Print Working Directory的缩写，显示当前目录（若是链接目录，显示的是链接目录而非实际目录）</p>
+<p>pwd -P 与pwd区别在于，-P表示的是实际目录，而非链接目录</p>
+<p>mkdir</p>
+<pre><code>-m 设置文件夹的权限
+mkdir -m 711 test
+-p 递归创建目录
+mkdir -p test1/test2/test3/test</code></pre><p>echo $PATH 显示环境变量</p>
+<p>PATH =”${PATH}:/root” 添加环境变量</p>
+<p>不建议将“.”加入PATH的搜索目录中</p>
+<p>文件与目录管理</p>
+<ul>
+<li><p>ls</p>
+<p><img src="ls.png" alt=""></p>
+<pre><code>modification time （ mtime）：
+文件内容变更会对该时间进行更新。
+
+status time （ ctime） ：
+权限或属性改变会更新此时间
+
+access time （ atime） ：
+文件被读取会更新此时间
+
+eg
+date; ls -l /etc/man_db.conf ; ls -l --time=atime /etc/man_db.conf ; \
+&gt; ls -l --time=ctime /etc/man_db.conf</code></pre></li>
+</ul>
+<ul>
+<li><p>复制、移动、删除：cp，rm，mv</p>
+<p>cp</p>
+<p><img src="cp.png" alt=""></p>
+<p><code>默认条件下，cp的来源文件与目标文件的权限是不同的，目标文件的拥有者通常会是指令操作者本身，需要和来源文件一致，可以使用-a或是-p选项</code>    </p>
+<p><img src="cp%E8%8C%83%E4%BE%8B6.png" alt=""></p>
+<p>``可以将多个文件一次复制进同一目录，注意最后一个一定是目录`</p>
+<pre><code> cp ~/.bashrc ~/.bash_history /tmp  </code></pre></li>
+<li><p>rm</p>
+<p><img src="rm%E5%8F%82%E6%95%B0.png" alt="">  </p>
+<pre><code>#在指令前加反斜线，可以忽略alias的指定选项，即删掉目录而不提示
+\rm -r /tmp/etc</code></pre><p><img src="rm%E7%9A%84%E7%89%B9%E6%AE%8A%E4%BE%8B%E5%AD%90.png" alt=""></p>
+</li>
+</ul>
+<ul>
+<li><p>mv </p>
+<p><img src="mv%E7%A4%BA%E4%BE%8B.png" alt=""></p>
+</li>
+</ul>
+<p>取得路径的文件名称与目录名称</p>
+<p><img src="basename%E4%B8%8Edirname.png" alt=""></p>
+<p>文件内容查阅</p>
+<ul>
+<li><p>cat 由第一行开始显示文件内容</p>
+<p><img src="cat.png" alt=""></p>
+</li>
+<li><p>tac 从最后一行开始显示，与cat显示方式相反</p>
+</li>
+<li><p>nl 显示的时候，顺道输出行号</p>
+<p><img src="nl.png" alt=""></p>
+</li>
+<li><p>more 一页一页的显示文件内容</p>
+<p><img src="more%E6%8C%89%E9%94%AE.png" alt=""></p>
+</li>
+<li><p>less与more类似，但是比more更好的是，它可以往前翻页</p>
+<p><img src="less%E6%8C%89%E9%94%AE.png" alt=""></p>
+</li>
+<li><p>head 只看头几行</p>
+<p><img src="head.png" alt=""></p>
+</li>
+<li><p>tail 只看尾巴几行</p>
+<p><img src="tail.png" alt=""></p>
+</li>
+<li><p>od 以二进制的方式读取文件内容 （？ 命令od -t oCc /etc/issue存疑）</p>
+<p><img src="od.png" alt=""></p>
+</li>
+<li><p>touch （选项中的时间可参照第6章ls）</p>
+<p>默认不接参数，atime/ctime/mtime 为当前时间</p>
+<p><img src="touch.png" alt=""></p>
+</li>
+</ul>
+<p>文件与目录的默认权限与隐藏权限</p>
+<p>文件默认权限 umask</p>
+<ul>
+<li>umask -S查看</li>
+<li>文件默认权限为666，默认没有可执行权限，即-rw-rw-rw</li>
+<li>目录默认权限为777，即drwxrwxrwx</li>
+<li>若设置umask为002即输入命令 umask 002，则创建文件的默认权限为666-002=664，这个在Samaba Server和FTP Server当中很有用。</li>
+<li>出于安全考虑，root的umask会拿掉比较多的属性，通常umask为022</li>
+</ul>
+<p>设置文件隐藏属性 chattr</p>
+<p><img src="chattr.png" alt=""></p>
+<p>显示文件隐藏属性 lsattr</p>
+<p><img src="lsattr.png" alt=""></p>
+<p>文件特殊权限：SUID,SGID,SBIT</p>
+<ul>
+<li><p>SUID</p>
+<p>举例：用户可以自行更改密码，而密码文件的所有权为root</p>
+<p>1.dmtsai 对于 /usr/bin/passwd 这个程序来说是具有 x 权限的， 表示<br>dmtsai 能执行 passwd；<br>2.passwd 的拥有者是 root 这个帐号；<br>3.dmtsai 执行 passwd 的过程中， 会“暂时” 获得 root 的权限；<br>4./etc/shadow 就可以被 dmtsai 所执行的 passwd 所修改</p>
+<p><img src="suid.png" alt=""></p>
+</li>
+<li><p>SGID</p>
+<p><strong>todo 待补充</strong></p>
+</li>
+<li><p>SBIT</p>
+<p><strong>todo 待补充</strong></p>
+</li>
+</ul>
+<p>file 文件名</p>
+<p>​        可以简单获取文件信息</p>
+<p>文件查找</p>
+<ul>
+<li><p>which 寻找可执行文件 </p>
+<p>参数-a 可以列出所有PATH目录中的命令</p>
+</li>
+<li><p>find不常用 搜索硬盘的文件系统 速度慢<strong>todo 待补充</strong></p>
+<p><img src="find.png" alt=""></p>
+<p><img src="find_time.png" alt=""></p>
+<p><img src="find3.png" alt=""></p>
+</li>
+<li><p>whereis 在某些特定的目录中寻找文件文件名</p>
+<p><img src="whereis.png" alt=""></p>
+</li>
+<li><p>locate / updatedb 利用数据库搜索文件名</p>
+<p><img src="locate.png" alt=""></p>
+<p><img src="updatedb.png" alt=""></p>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 q_tnt@qq.com </span>
